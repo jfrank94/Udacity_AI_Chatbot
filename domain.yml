@@ -1,0 +1,60 @@
+
+intents:
+- goodbye
+- greet
+- mood_affirm
+- mood_deny
+- lesson_3_q
+- lesson_3_a
+- lesson_4_q
+- lesson_4_a
+- lesson_5_q
+- lesson_5_a
+- request_restaurant:
+      use_entities: []
+
+slots:
+  group:
+    type: text
+  better_answer:
+    type: text
+
+entities:
+- group
+- slack_id
+- lessonnumber_questionnumber
+- better_answer
+
+actions:
+- utter_greet
+- utter_did_that_help
+- utter_anything_else
+- utter_submit_better_answer
+- utter_goodbye
+- action_retrieve_questions
+- action_retrieve_answers
+
+forms:
+  - better_answer_form
+
+templates:
+  utter_greet:
+  - text: “Hello, I am the student-powered AI bot for the Udacity AI Program! Please choose from which lessons you’d like to seek past questions and answers from.”
+
+  utter_did_that_help:
+  - text: “Did this answer satisfy your needs?”
+
+  utter_submit_better_answer:
+  - text: “No problem. If you think you have a better answer and explanation to this question, you can submit it to our knowledge base, and the humans that are powering me will look at it and may update the knowledge base.\n
+          In order to submit, please do the following:\n
+          - Start with your Slack ID (to receive credit for your answer).\n
+          - Add the lesson number_question number format.\n
+          - Finally, type out your explanation.\n
+          - Your format should look like so:\n
+          - Slack ID | 3_4 | Answer - (insert better answer explanation here)!"
+
+  utter_anything_else:
+  - text: "Are there any other questions that you want to see?"
+
+  utter_goodbye:
+  - text: “Goodbye!”
