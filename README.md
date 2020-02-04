@@ -7,12 +7,15 @@ To train the models, type in this command:
 `python -m rasa train` 
 
 To view the cross-validation score from training the model, type in this command: 
+
 `python -m rasa test nlu -u nlu.md --config config.yml --cross-validation`
 
-For running the chatbot, please do the following:
+For running the chatbot, type in the following:
+
 `python -m rasa run actions --actions actions --debug (the debug flag is optional)`
 
 Then: 
+
 `python -m rasa shell --endpoints endpoints.yml`
 
 
